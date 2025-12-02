@@ -437,7 +437,7 @@ int main(int argc, char** argv)
             return 1;
         }
     }
-
+///Start measurement time
 15. Kernel Execution - GPU 0
     // ===== Kernel execution =====
 
@@ -512,7 +512,7 @@ int main(int argc, char** argv)
         cudaSetDevice(dev_1);
         cudaDeviceSynchronize();
     }
-
+///stop
 18. Data Copy Back (Device → Host) - GPU 0
     // ===== Device -> Host copy =====
     // GPU 0
@@ -655,4 +655,5 @@ int main(int argc, char** argv)
     return 0;
 
 }
+
 
