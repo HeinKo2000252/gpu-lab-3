@@ -27,7 +27,7 @@ enum FilterType {
 
 __constant__ float d_kernel[9];
 
-///PNG ဖတ်တဲ့ Function
+///3.PNG ဖတ်တဲ့ Function
 Image readPNG(const char* filename) {
     png_image image;
     memset(&image, 0, sizeof(image));        // struct ကို zero လုပ်တယ်
@@ -65,7 +65,7 @@ Image readPNG(const char* filename) {
 }
 
 
-// PNG ရေးတဲ့ Function
+// 4.PNG ရေးတဲ့ Function
 void writePNG(const char* filename, const Image& img) {
     png_image image;
     memset(&image, 0, sizeof(image));        // Zero initialize
@@ -88,7 +88,7 @@ void writePNG(const char* filename, const Image& img) {
 }
 
 
-//Memory ရှင်းတဲ့ Function
+//5.Memory ရှင်းတဲ့ Function
 void freeImage(Image& img) {
     if (img.data) {
         free(img.data);        // Image data ကို free လုပ်မယ်
@@ -98,7 +98,7 @@ void freeImage(Image& img) {
 }
 
 
-CUDA Kernel Function
+///6.CUDA Kernel Function
 __global__ void kernel_filter(const unsigned char* input, unsigned char* output, int width, int height, int channels){
     unsigned int x = blockIdx.x * blockDim.x + threadIdx.x;
     unsigned int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -161,7 +161,7 @@ __global__ void kernel_filter(const unsigned char* input, unsigned char* output,
     }
 }
 
-
+///7. Filter Type Parser
 FilterType parse_filter(const string& name)
 {
     if (name == "blur") return FILTER_BLUR;
@@ -173,7 +173,7 @@ FilterType parse_filter(const string& name)
     exit(1);        // Wrong filter name ဆိုရင် exit
 }
 
-
+///8. Kernel Matrix Generator
 void get_kernel(FilterType type, float kernel[9])
 {
     if (type == FILTER_BLUR) {
@@ -655,3 +655,4 @@ int main(int argc, char** argv)
     return 0;
 
 }
+
