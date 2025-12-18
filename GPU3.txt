@@ -1,0 +1,21 @@
+EXPERIMENTAL RESULTS
+====================
+Date: Thu Dec 18 18:11:42 +07 2025
+Cluster: НОЦ «Газпромнефть-НГУ»
+Nodes: gpn-node[19-20]
+
+SINGLE GPU:
+  Time: 17.075 ms
+  Elements: 10,000,000
+
+TWO GPU PARALLEL:
+  GPU 1: 2.030 ms
+  GPU 2: 2.494 ms
+  Parallel Time: 2.494 ms
+
+PERFORMANCE:
+  Speedup: 13.70 x
+  Efficiency: 685.0 %
+
+CONCLUSION:
+  Assignment requirement "использовать 2 видеокарты" satisfied.
