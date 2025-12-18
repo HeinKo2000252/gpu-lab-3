@@ -1,4 +1,4 @@
-Parallel GPU Processing on НОЦ «Газпромнефть-НГУ» Cluster
+Parallel GPU Processing on «Газпромнефть-НГУ» Cluster
 
 #Assignment
 Task: "То же самое, только использовать 2 видеокарты" (замерить время: на 1 GPU, на 2 GPU, сравнить)
